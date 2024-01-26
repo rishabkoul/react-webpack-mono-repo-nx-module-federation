@@ -8,8 +8,12 @@
 import { DataContext } from '@pspl/data-context';
 import { useContext } from 'react';
 
+import dataJson from '../data.json';
+
 export function NxWelcome({ title }) {
   const { counter, setCounter } = useContext(DataContext);
+
+  console.log(dataJson);
   return (
     <>
       <style
