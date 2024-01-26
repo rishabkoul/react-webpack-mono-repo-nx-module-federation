@@ -16,7 +16,6 @@
         "main": "daily-sip/src/main.ts",
         "tsConfig": "daily-sip/tsconfig.app.json",
         "assets": ["daily-sip/src/favicon.ico", "daily-sip/src/assets"],
-        "styles": ["daily-sip/src/styles.scss"],
         "scripts": [],
         "webpackConfig": "daily-sip/webpack.config.js"
       },

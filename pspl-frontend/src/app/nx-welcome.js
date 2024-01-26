@@ -10,6 +10,8 @@ import { DataContext } from '@pspl/data-context';
 import { useContext } from 'react';
 
 import styles from './App.module.scss';
+import calenderIcon from '../assets/calenderIcon.png';
+import leadingIcon from '../assets/leadingIcon.svg';
 
 export function NxWelcome({ title }) {
   const { counter } = useContext(DataContext);
@@ -440,6 +442,8 @@ export function NxWelcome({ title }) {
             </h1>
           </div>
           Counter {counter}
+          <img alt="" src={calenderIcon} />
+          <img alt="" src={leadingIcon} />
           <div id="hero" className="rounded">
             <div className="text-container">
               <h2>

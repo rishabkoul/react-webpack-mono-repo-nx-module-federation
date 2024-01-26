@@ -4,7 +4,7 @@ const { withModuleFederation } = require('@nx/react/module-federation');
 
 const baseConfig = require('./module-federation.config');
 
-const config = {
+const webPackconfig = {
   ...baseConfig,
 };
 
@@ -12,5 +12,5 @@ const config = {
 module.exports = composePlugins(
   withNx(),
   withReact(),
-  withModuleFederation(config)
+  withModuleFederation(webPackconfig)
 );

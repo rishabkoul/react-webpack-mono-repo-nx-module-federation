@@ -16,7 +16,6 @@
         "main": "pspl-frontend/src/main.ts",
         "tsConfig": "pspl-frontend/tsconfig.app.json",
         "assets": ["pspl-frontend/src/favicon.ico", "pspl-frontend/src/assets"],
-        "styles": ["pspl-frontend/src/styles.scss"],
         "scripts": [],
         "webpackConfig": "pspl-frontend/webpack.config.js"
       },

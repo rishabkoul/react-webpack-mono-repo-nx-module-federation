@@ -16,7 +16,6 @@
         "main": "monthly-sip/src/main.ts",
         "tsConfig": "monthly-sip/tsconfig.app.json",
         "assets": ["monthly-sip/src/favicon.ico", "monthly-sip/src/assets"],
-        "styles": ["monthly-sip/src/styles.scss"],
         "scripts": [],
         "webpackConfig": "monthly-sip/webpack.config.js"
       },
