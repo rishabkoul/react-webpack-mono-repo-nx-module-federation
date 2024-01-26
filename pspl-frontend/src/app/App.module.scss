@@ -1,1 +1,6 @@
 /* Your styles goes here. */
+@import './../styles.scss';
+
+.smallFont {
+  @include fSize(12px !important);
+}

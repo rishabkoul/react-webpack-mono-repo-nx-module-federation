@@ -9,6 +9,8 @@
 import { DataContext } from '@pspl/data-context';
 import { useContext } from 'react';
 
+import styles from './App.module.scss';
+
 export function NxWelcome({ title }) {
   const { counter } = useContext(DataContext);
 
@@ -433,7 +435,7 @@ export function NxWelcome({ title }) {
         <div className="container">
           <div id="welcome">
             <h1>
-              <span> Hello there, </span>
+              <span className={styles.smallFont}> Hello there, </span>
               Welcome {title} 👋
             </h1>
           </div>
