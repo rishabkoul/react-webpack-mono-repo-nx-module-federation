@@ -1,0 +1,95 @@
+{
+  "name": "pspl-frontend",
+  "$schema": "../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "pspl-frontend/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nx/webpack:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "compiler": "babel",
+        "outputPath": "dist/pspl-frontend",
+        "index": "pspl-frontend/src/index.html",
+        "baseHref": "/",
+        "main": "pspl-frontend/src/main.ts",
+        "tsConfig": "pspl-frontend/tsconfig.app.json",
+        "assets": ["pspl-frontend/src/favicon.ico", "pspl-frontend/src/assets"],
+        "styles": ["pspl-frontend/src/styles.scss"],
+        "scripts": [],
+        "webpackConfig": "pspl-frontend/webpack.config.js"
+      },
+      "configurations": {
+        "development": {
+          "extractLicenses": false,
+          "optimization": false,
+          "sourceMap": true,
+          "vendorChunk": true
+        },
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "pspl-frontend/src/environments/environment.js",
+              "with": "pspl-frontend/src/environments/environment.prod.js"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false,
+          "webpackConfig": "pspl-frontend/webpack.config.prod.js"
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nx/react:module-federation-dev-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "pspl-frontend:build",
+        "hmr": true,
+        "port": 4200
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "pspl-frontend:build:development"
+        },
+        "production": {
+          "buildTarget": "pspl-frontend:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"]
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "pspl-frontend/jest.config.js"
+      }
+    },
+    "serve-static": {
+      "executor": "@nx/web:file-server",
+      "defaultConfiguration": "production",
+      "options": {
+        "buildTarget": "pspl-frontend:build",
+        "watch": false,
+        "port": 4200
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "pspl-frontend:build:development"
+        },
+        "production": {
+          "buildTarget": "pspl-frontend:build:production"
+        }
+      }
+    }
+  },
+  "tags": []
+}
